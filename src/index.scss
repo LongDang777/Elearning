@@ -1,13 +1,36 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+//helps
+@import './assets/styles/helpers/variables';
+@import './assets/styles/helpers/mixin';
+//components
+@import './assets/styles/common/common';
+@import './assets/styles/common/button';
+@import './assets/styles/common/input';
+@import './assets/styles/components/header';
+@import './assets/styles/components/footer';
+@import './assets/styles/components/khoahoc';
+@import './assets/styles/components/itemCategory';
+@import './assets/styles/components/itemCourseOfUser.scss';
+@import './assets/styles/components/coursePopular.scss';
+@import './assets/styles/components/admin/userManagementModal.scss';
+@import './assets/styles/components/admin/coursesManagementModal.scss';
+@import './assets/styles/components/admin/widthModal.scss';
+//page
+@import './assets/styles/pages/PageNotFound.scss';
+@import './assets/styles/pages/home/Intro.scss';
+@import './assets/styles/pages/home/category.scss';
+@import './assets/styles/pages/home/stepbuycourse.scss';
+@import './assets/styles/pages/home/listcourse-home.scss';
+@import './assets/styles/pages/home/InforElearning.scss';
+@import './assets/styles/pages/home/feel.scss';
+@import './assets/styles/pages/form/Form.scss';
+@import './assets/styles/pages/detailCart/detaiCart.scss';
+@import './assets/styles/pages/detailCart/billCart.scss';
+@import './assets/styles/pages/Course/allcourse.scss';
+@import './assets/styles/pages/detailCourse/detailCourse.scss';
+@import './assets/styles/pages/Course/ItemCourse.scss';
+@import './assets/styles/pages/Course/tableItemCourse.scss';
+@import './assets/styles/pages/Course/courseCategory.scss';
+@import './assets/styles/pages/ProfileUser/profileUser.scss';
+@import './assets/styles/pages/ProfileUser/CourseAttended.scss';
+@import './assets/styles/pages/ProfileUser/AccountInfo.scss';
+@import './assets/styles/pages/admin/courseManagement.scss';
