@@ -1,0 +1,1 @@
+export const DOMAIN = 'https://elearningnew.cybersoft.edu.vn';
