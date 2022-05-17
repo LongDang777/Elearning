@@ -9,7 +9,7 @@ export const Admintemplate =(props)=> {
         return (
           <Fragment>
             {/* <Header /> */}
-          
+            admin
             <props.component {...propsRoute} />
 
             {/* <Footer /> */}
