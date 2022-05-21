@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+
 export default function ItemCategory(props) {
   return (
     <>
@@ -8,12 +9,9 @@ export default function ItemCategory(props) {
         to={`/home/courses/${props.category.maDanhMuc}`}
       >
         <div className="overflow"></div>
-        <img
-          src={`../src/assets/image/category/${props.img}.jpg`}
-          alt="img-category"
-        />
+        <img src={`./img/${props.img}.jpg`} alt="img-category" />
         <div className="content">
-          <div className="text-center">
+          <div className="text-center item-category__heading">
             <h6>{props.category.tenDanhMuc}</h6>
           </div>
         </div>
