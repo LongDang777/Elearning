@@ -20,6 +20,8 @@ const OurCourse = () => {
     });
   }, []);
 
+  // show button
+
   const efflectLoadCourse = () => {
     let lengthItemCourse = $(".item-course").length;
     let x = 3;
