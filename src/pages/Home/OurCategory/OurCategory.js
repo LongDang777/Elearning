@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { layDanhMucKhoaHocAction } from "../../../redux/actions/DanhMucKhoaHoc";
 import ItemCategory from "./ItemCategory";
+
 const OurCategory = () => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -19,6 +20,7 @@ const OurCategory = () => {
             <ItemCategory key={index} img={index + 1} category={item} />
           ))}
         </div>
+        <img src="../src/assets/image/category/1.jpg" width={100} alt="" />
       </div>
     </div>
   );

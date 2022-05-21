@@ -227,6 +227,10 @@
 					font-size: $fs-md;
 					font-family: $font-title;
 					font-weight: $fw-bold-1;
+					&:hover {
+						background: rgb(131, 131, 226);
+						color: #fff;
+					}
 				}
 				i {
 					align-self: center;
