@@ -16,13 +16,13 @@ const OurCourse = () => {
   }, []);
   useEffect(() => {
     $(document).ready(() => {
-      efflectLoadCourse();
+      loadCourse();
     });
   }, []);
 
-  // show button
+  //
 
-  const efflectLoadCourse = () => {
+  const loadCourse = () => {
     let lengthItemCourse = $(".item-course").length;
     let x = 3;
     $("#showLess").hide();
