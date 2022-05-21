@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { laydanhSachKhoaHocAction } from "../../../redux/actions/QuanLiKhoaHocAction";
 import Course from "./Course";
+import * as $ from "jquery";
 
 const OurCourse = () => {
   const dispatch = useDispatch();
@@ -13,6 +14,41 @@ const OurCourse = () => {
   useEffect(() => {
     dispatch(laydanhSachKhoaHocAction());
   }, []);
+  useEffect(() => {
+    $(document).ready(() => {
+      efflectLoadCourse();
+    });
+  }, []);
+
+  const efflectLoadCourse = () => {
+    let lengthItemCourse = $(".item-course").length;
+    let x = 3;
+    $("#showLess").hide();
+    $(".item-course:lt(" + x + ")").show();
+    $("#loadMore").click(() => {
+      x = x + 3 <= lengthItemCourse ? x + 3 : lengthItemCourse;
+      $(".item-course:lt(" + x + ")").slideDown();
+      $(".item-course:lt(" + x + ")").show("slow");
+      $("#showLess").show();
+      x === lengthItemCourse ? $("#loadMore").hide() : $("#loadMore").show();
+    });
+    $("#showLess").click(() => {
+      x = x - 3 <= 0 ? 3 : x - 3;
+      $(".item-course")
+        .not(":lt(" + 3 + ")")
+        .slideUp();
+      $(".item-course")
+        .not(":lt(" + 3 + ")")
+        .hide("slow");
+      window.scroll({
+        top: $(".list-course").offset().top - 50,
+        left: 0,
+        behavior: "smooth",
+      });
+      $("#showLess").hide();
+      $("#loadMore").show();
+    });
+  };
 
   return (
     <section className="list-course mb-lg-5">
@@ -24,7 +60,7 @@ const OurCourse = () => {
       </p>
       <div className="lc-main-content">
         <div className="lc-content">
-          {courses?.splice(20, 3).map((course, index) => (
+          {courses?.splice(20, 6).map((course, index) => (
             <div className="item-course" key={index}>
               <Course course={course} />
             </div>
