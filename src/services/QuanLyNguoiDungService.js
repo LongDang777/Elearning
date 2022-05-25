@@ -1,13 +1,24 @@
 import { http } from '../util/setting';
 
-class QuanLyNguoiDungSerVices {
+
+
+class QuanLyNguoiDungService {
+  layDanhSachNguoiDung = (tuKhoa) => {
+    if (tuKhoa) {
+      return http.get(`/api/QuanLyNguoiDung/LayDanhSachNguoiDung?tuKhoa=${tuKhoa}&MaNhom=GP01`)
+    }
+    return http.get(`/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01`)
+  };
+  layThongTinTaiKhoan = () => {
+    return http.post(`/api/QuanLyNguoiDung/ThongTinTaiKhoan`)
+  }
   dangNhap = (userLogin) => {
     return http.post(`/api/QuanLyNguoiDung/DangNhap`, userLogin)
   }
-
   dangKy = (userInfo) => {
     return http.post(`/api/QuanLyNguoiDung/DangKy`, userInfo)
   }
 }
 
-export const quanLyNguoiDungServices = new QuanLyNguoiDungSerVices();
+export const quanLyNguoiDungService = new QuanLyNguoiDungService();
+

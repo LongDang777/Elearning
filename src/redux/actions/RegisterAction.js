@@ -1,10 +1,11 @@
 import { message } from 'antd'
-import { quanLyNguoiDungServices } from '../../services/QuanLyNguoiDungService'
+import { quanLyNguoiDungService } from '../../services/QuanLyNguoiDungService';
+
 
 export const RegisterAction = (userInfo) => {
     return async (dispatch) => {
         try {
-            const result = await quanLyNguoiDungServices.dangKy(userInfo);
+            const result = await quanLyNguoiDungService.dangKy(userInfo);
             dispatch({
                 type: 'REGISTER_USER',
                 userInfo: result.data,

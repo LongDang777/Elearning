@@ -12,6 +12,7 @@ export default function Home() {
   // useEffect(()=>{
   //   dispatch(laydanhSachKhoaHocAction())
   // },[])
+  // 
 
   return (
     <Fragment>

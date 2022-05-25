@@ -59,7 +59,7 @@ export default function Header(props) {
             <li className="nav-item active">
               <NavLink className="nav-link" to="/">HOME</NavLink>
             </li><li className="nav-item">
-              <NavLink className="nav-link" to="/">COURSE</NavLink>
+              <NavLink className="nav-link" to="/allcourse">COURSE</NavLink>
             </li>
           </ul>
           <div className="navbar-right ml-auto my-2 my-lg-0" >

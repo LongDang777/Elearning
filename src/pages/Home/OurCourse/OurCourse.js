@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { laydanhSachKhoaHocAction } from "../../../redux/actions/QuanLiKhoaHocAction";
+import { layDanhSachKhoaHocAction } from "../../../redux/actions/QuanLyKhoaHocAction";
 import Course from "./Course";
 import * as $ from "jquery";
 
@@ -12,7 +12,7 @@ const OurCourse = () => {
   );
 
   useEffect(() => {
-    dispatch(laydanhSachKhoaHocAction());
+    dispatch(layDanhSachKhoaHocAction());
   }, []);
   useEffect(() => {
     $(document).ready(() => {
