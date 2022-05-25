@@ -14,9 +14,8 @@ export default function TableItemCourse(props) {
     window.scrollTo(0,0)
 })
 
-
-	let {mangKhoaHoc} = props
-
+	let {mangKhoaHoc, courseOfUser} = props
+// console.log(courseOfUser);
   const tempArray = () => {
     let pagenumber;
     pagenumber = mangKhoaHoc.length % 8 === 0
@@ -49,7 +48,7 @@ export default function TableItemCourse(props) {
 	};
   
   const renderTableCourse = tempArray => {
-		// let { listCourse, courseOfUser } = this.props;
+		
 		return tempArray.map((item, index) => {
 			return (
 				<div
@@ -66,8 +65,7 @@ export default function TableItemCourse(props) {
 								<div className="col-3 " key={i}>
 									<ItemCourse 
 										course={item} id={index * 10 + i}
-										
-										// courseOfUser={courseOfUser ? courseOfUser : ''}
+										courseOfUser={courseOfUser ? courseOfUser : ''}
 									/>
 								</div>
 							);

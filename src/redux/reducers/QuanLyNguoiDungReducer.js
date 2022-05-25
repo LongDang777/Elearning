@@ -6,6 +6,7 @@ if (localStorage.getItem('LOGIN_USER')) {
 
 const stateDefaut = {
   userLogin: user,
+  userInfo: {},
   mangND: [],
   thongTinTK: {},
 }
@@ -23,12 +24,16 @@ export const QuanLyNguoiDungReducer = (state = stateDefaut, action) => {
       localStorage.removeItem('TOKEN')
       state.userLogin = action.userLogin;
       return { ...state }
+    case 'REGISTER_USER':
+      state.userInfo = action.userInfo;
+      return { ...state }
     case 'LAY_DS_NGUOIDUNG':
       state.mangND = action.mangND;
       return { ...state }
     case 'LAY_THONGTIN_TK':
       state.thongTinTK = action.thongTinTK
       return { ...state }
+
     default:
       return state
   }

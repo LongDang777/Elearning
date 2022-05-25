@@ -52,7 +52,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <i className="fa fa-envelope-o" aria-hidden="true">
-                    <span>longnguyen@gmail.com</span>
+                    <span>longdang@gmail.com</span>
                   </i>
                 </li>
                 <li>
@@ -73,7 +73,7 @@ export default function Footer() {
             />
           </a>
           <div className="text-right">
-            <p>SẢN PHẨM ĐƯỢC TẠO BỞI TRẦN DŨNG, QUỐC KỲ &amp; NGUYỄN LONG</p>
+            <p>SẢN PHẨM ĐƯỢC TẠO BỞI TRẦN DŨNG, QUỐC KỲ &amp; LONG ĐẶNG</p>
             <p>
               ĐỊA CHỈ: 100 PHẠM NHƯ XƯƠNG - HÒA KHÁNH NAM, LIÊN CHIỂU ,TP.ĐN
             </p>

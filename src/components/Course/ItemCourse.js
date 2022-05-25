@@ -1,16 +1,19 @@
-import React, { Fragment, useEffect } from 'react'
+import React, {  useEffect } from 'react'
 import { UncontrolledPopover, PopoverBody } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
-import { connect } from 'react-redux';
-import Swal from 'sweetalert';
+import { useDispatch, useSelector } from 'react-redux';
+import Swal from 'sweetalert2';
+import { themGioHangAction } from '../../redux/actions/QuanLyKhoaHocAction';
 
 export default function ItemCourse(props) {
 
 	useEffect(() => {
 		window.scrollTo(0, 0)
 	})
+	const { course, courseOfUser } = props;
+	const dispatch = useDispatch()
 	
-	const { course } = props;
+	const {gioHang} = useSelector(state => state.QuanLyKhoaHocReducer)
 
 	const goTop = () => {
 		window.scroll({
@@ -22,7 +25,7 @@ export default function ItemCourse(props) {
 
 	const addToCart = () => {
 		localStorage.getItem('LOGIN_USER')
-			? props.addToCart(props)
+			? dispatch(themGioHangAction(course))
 			: Swal.fire({
 				position: 'center',
 				icon: 'error',
@@ -33,27 +36,27 @@ export default function ItemCourse(props) {
 	};
 
 	const renderAddToCart = () => {
-		return this.props.listCart.findIndex(item => {
-			return item.course.maKhoaHoc === this.props.course.maKhoaHoc;
+		return gioHang.findIndex(item => {
+			return item.maKhoaHoc === course.maKhoaHoc;
 		}) === -1 ? (
-			<button className="btn--blue btnn" onClick={addToCart()}>
+			<button className="btn--blue btnn" onClick={addToCart}>
 				THÊM GIỎ HÀNG
 			</button>
 		) : (
-			<NavLink className="btn--purple btnn" to="/home/detail-cart">
+			<NavLink className="btn--purple btnn" to="/">
 				TỚI GIỎ HÀNG
 			</NavLink>
 		);
 	};
 
 	const handleAddToCart = () => {
-		return this.props.courseOfUser ? (
-			this.props.courseOfUser.findIndex(item => {
-				return item.maKhoaHoc === this.props.course.maKhoaHoc;
+		return courseOfUser ? (
+			courseOfUser.findIndex(item => {
+				return item.maKhoaHoc === course.maKhoaHoc;
 			}) === -1 ? (
-				renderAddToCart()
+				 renderAddToCart()
 			) : (
-				<NavLink className="btn--white btnn" to="/home/profile" onClick={goTop()}>
+				<NavLink className="btn--green btnn" to="/home/profile" onClick={goTop}>
 					TỚI HỒ SƠ
 				</NavLink>
 			)
@@ -83,7 +86,7 @@ export default function ItemCourse(props) {
 								>
 									Chi Tiết
 								</NavLink>
-								{/* {this.handleAddToCart()} */}
+								{handleAddToCart()}
 							</div>
 						</div>
 					</div>
