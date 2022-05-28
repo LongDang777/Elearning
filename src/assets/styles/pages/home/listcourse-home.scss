@@ -2,7 +2,17 @@
 	padding: 40px 100px;
 	width: 100%;
 	.item-course {
-		width: 31%;
+		width: 100%;
+		.mct-original {
+			.d-flex.fee {
+				font-size: 16px;
+			}
+			.content {
+				p {
+					text-transform: capitalize;
+				}
+			}
+		}
 		// display: none;
 	}
 	.lc-main-content {
@@ -29,4 +39,106 @@
 			}
 		}
 	}
+}
+
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (min-width : 375px) and  (max-width : 736px){
+ .list-course {
+	 .title {
+			font-size: 16px;
+	 }
+	 .subtitle {
+		 font-size: 8px;
+	 }
+	 .lc-main-content {
+		 .item-course {
+			 .khoa-hoc {
+				 .main-content {
+					 .status-course {
+						 width: 28px;
+						 height: 13px;
+						 span {
+							 font-size: 7px;
+						 }
+						 &::after {
+							top: 0.5px;
+							right: -5px;
+							width: 10px;
+							height: 10px;
+						 }
+					 }
+					 .mct-original {
+						 .content {
+							 label {
+								font-size: 10px;
+								line-height: 16px;
+							 }
+							 p {
+								 font-size: 10px;
+								 text-transform: capitalize;
+							 }
+						 }
+						 
+					 }
+					 .mct-hover {
+						 p {
+							 font-size: 9px;
+						 }
+						 h3 {
+							 font-size: 18px;
+						 }
+						 .content {
+							 p {
+								text-transform: capitalize;
+
+							 }
+						 }
+						 .d-flex.fee {
+							font-size: 18px;
+						} 
+						span {
+							font-size: 9px;
+							&::before, &::after {
+								width: 22px;
+							}
+						}
+						.btn-group {
+							a {
+								font-size: 8px;
+								padding: 10px 4px;
+							}
+							.like {
+								width: 12px;
+								.HeartAnimation {
+									width: 72px;
+									height: 72px;
+									margin-top: -19px;
+								}
+
+							}
+						}
+					 }
+				 }
+			 }
+			 .ct-wallpaper {
+				 h3 {
+					 font-size: 15px;
+				 }
+				  p {
+						font-size: 9px;
+						&::before,
+						&::after {
+							width: 15px;
+						}
+					}
+			 }
+		 }
+	 }
+ }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+  /* Styles */
 }

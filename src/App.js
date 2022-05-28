@@ -1,14 +1,13 @@
-import './App.css';
-import { Router } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
+import "./App.css";
+import { Router } from "react-router-dom";
+import { createBrowserHistory } from "history";
 import "antd/dist/antd.css";
-import {HomeTemplate} from './templates/HomeTemplate/HomeTemplate';
-import { Admintemplate } from './templates/Admintemplate/Admintemplate';
-import Home from './pages/Home/Home';
-import Admin from './pages/Admin/Admin';
-import AllCourse from './pages/Course/AllCourse';
-
-
+import { HomeTemplate } from "./templates/HomeTemplate/HomeTemplate";
+import { Admintemplate } from "./templates/Admintemplate/Admintemplate";
+import Home from "./pages/Home/Home";
+import Admin from "./pages/Admin/Admin";
+import AllCourse from "./pages/Course/AllCourse";
+import CourseDetail from "./pages/CourseDetail/CourseDetail";
 
 export const history = createBrowserHistory();
 
@@ -16,15 +15,11 @@ function App() {
   return (
     <Router history={history}>
       <div className="App">
-        
+        <HomeTemplate path="/" component={Home} />
+        <HomeTemplate path="/allcourse" component={AllCourse} />
+        <HomeTemplate path="/coursedetail/:id" component={CourseDetail} />
 
-          <HomeTemplate path='/' component={Home}/>
-          <HomeTemplate path='/allcourse' component={AllCourse}/>
-
-          <Admintemplate path='/admin' component={Admin}/>
-          
-        
-        
+        <Admintemplate path="/admin" component={Admin} />
       </div>
     </Router>
   );

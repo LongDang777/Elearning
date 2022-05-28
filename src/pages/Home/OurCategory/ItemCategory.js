@@ -4,10 +4,7 @@ import { NavLink } from "react-router-dom";
 export default function ItemCategory(props) {
   return (
     <>
-      <NavLink
-        className="item-category"
-        to={`/home/courses/${props.category.maDanhMuc}`}
-      >
+      <NavLink className="item-category" to={`/allcourse`}>
         <div className="overflow"></div>
         <img src={`./img/${props.img}.jpg`} alt="img-category" />
         <div className="content">

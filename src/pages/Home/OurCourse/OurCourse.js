@@ -61,10 +61,10 @@ const OurCourse = () => {
         <br /> We give you the skills and courses to teach what you love
       </p>
       <div className="lc-main-content">
-        <div className="lc-content">
+        <div className="lc-content row">
           {courses?.splice(20, 6).map((course, index) => (
-            <div className="item-course" key={index}>
-              <Course course={course} />
+            <div className="item-course col-xl-2 col-lg-4 col-xl-4" key={index}>
+              <Course className=" " course={course} />
             </div>
           ))}
         </div>
@@ -75,7 +75,7 @@ const OurCourse = () => {
           <button className="btn--blue btnn" id="showLess">
             SHOWN LESS <i className="fa fa-angle-double-up"></i>
           </button>
-          <NavLink className="btn--purple btnn" to="/home/courses/all">
+          <NavLink className="btn--purple btnn" to="/allcourse">
             SHOWN ALL<i className="fa fa-angle-double-right"></i>
           </NavLink>
         </div>
