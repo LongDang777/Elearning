@@ -3,6 +3,7 @@ import { http } from '../util/setting';
 
 
 class QuanLyKhoaHocServices {
+  // Trang Home
   laydanhSachKhoaHoc = (tenKhoaHoc) => {
     if (tenKhoaHoc) {
       return http.get(`/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?tenKhoaHoc=${tenKhoaHoc}&MaNhom=GP01`)
@@ -21,6 +22,12 @@ class QuanLyKhoaHocServices {
   layThongTinKhoaHoc = (maKhoaHoc) => {
     return http.get(`/api/QuanLyKhoaHoc/LayThongTinKhoaHoc?maKhoaHoc=${maKhoaHoc}`)
   }
+  dangKyKhoaHoc = (data) =>{
+    return http.post(`/api/QuanLyKhoaHoc/DangKyKhoaHoc`, data)
+  }
+
+
+  //Phần Admin
   layThongTinHocVienKhoaHoc = (maKhoaHoc) => {
     return http.get(`/api/QuanLyKhoaHoc/LayThongTinHocVienKhoaHoc/maKhoaHoc=${maKhoaHoc}`)
   }

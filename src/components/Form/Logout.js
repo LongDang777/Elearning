@@ -1,71 +1,56 @@
-import React, { useEffect } from 'react';
 import { UserOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { LogoutAction } from '../../redux/actions/LogoutAction';
+import { Button, Dropdown, Menu } from 'antd';
+import { NavLink } from 'react-router-dom';
 
 export default function LogOut() {
-  const dispatch = useDispatch()
-  const { userLogin } = useSelector(state => state.QuanLyNguoiDungReducer)
+  const dispatch = useDispatch();
+  const { userLogin } = useSelector((state) => state.QuanLyNguoiDungReducer);
 
   const handleLogout = () => {
-    dispatch(LogoutAction())
-  }
+    dispatch(LogoutAction());
+  };
+
+  const menu = (
+    <Menu
+      items={[
+        {
+          key: '1',
+          label: <NavLink to="/profile">Profile</NavLink>,
+        },
+        {
+          key: '2',
+          label: (
+            <div onClick={handleLogout}>
+              <NavLink to="/">Log out</NavLink>
+            </div>
+          ),
+        },
+      ]}
+    />
+  );
 
   return (
-    <LogOutStyled className="dropdown">
-      <button className="user-login fs-16 btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+    // <LogOutStyled className="dropdown">
+    <Dropdown overlay={menu} placement="bottomLeft">
+      <ButtonStyles className="user-login">
         <UserOutlined />
         &nbsp;
-        <p className='user-name m-l-5'>{userLogin.taiKhoan}</p>
-      </button>
-      <div className="dropdown-menu">
-        <button className="dropdown-item"
-          onClick={handleLogout}>Log out</button>
-      </div>
-    </LogOutStyled>
-  )
+        <p className="user-name m-l-5">{userLogin.taiKhoan}</p>
+      </ButtonStyles>
+    </Dropdown>
+  );
 }
 
-const LogOutStyled = styled.div`
-
-.user-login {
-    color: #28a745;
-    border-color: #28a745;
-    display: flex;
-    align-items: center;
-    // background: #fff;
-    border-radius: 5px;
-    padding: 6px 15px;
-    min-width: 100px;
-
-    &::after {
-      display: none;
-    }
-  }
-
-  .dropdown-menu {
-    border-radius: 5px;
-    min-width: 100%;
-    padding: 0;
-    margin-top: 4px;
-
-    .dropdown-item {
-      padding: 6px 15px;
-      text-align: center;
-
-      &:hover {
-        border-radius: 5px;
-        background-color: #dc3545;
-        border: 1px solid #dc3545;
-        color: #fff;
-      }
-
-      &:active {
-        background: #fff;
-        color: #000;
-      }
-    }
-  }
-`
-
+const ButtonStyles = styled(Button)`
+  color: #28a745;
+  border-color: #28a745;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  padding: 10px 15px;
+  min-width: 100px;
+  height: 40px;
+`;

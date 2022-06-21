@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { layDanhMucKhoaHocAction } from "../../../redux/actions/DanhMucKhoaHoc";
+import { layDanhMucKhoaHocAction } from "../../../redux/actions/QuanLyKhoaHocAction";
 import ItemCategory from "./ItemCategory";
 
 const OurCategory = () => {

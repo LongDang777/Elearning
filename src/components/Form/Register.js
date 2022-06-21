@@ -34,7 +34,7 @@ export default function Register() {
         },
         validationSchema: Yup.object({
             taiKhoan: Yup.string().required('Tài khoản không được để trống'),
-            // .notOneOf(userName, 'Tài khoản bị trùng trong mã nhóm GP03'),
+            // .notOneOf(userName, 'Tài khoản bị trùng trong mã nhóm GP01'),
             matKhau: Yup.string()
                 .required("Mật khẩu không được để trống")
                 .min(3, "Mật khẩu phải từ 3-12 ký tự")
@@ -44,7 +44,7 @@ export default function Register() {
             email: Yup.string().
                 required('Email không được để trống')
                 .email('Email không đúng định dạng'),
-            // .notOneOf(userMail, 'Email bị trùng trong mã nhóm GP03'),
+            // .notOneOf(userMail, 'Email bị trùng trong mã nhóm GP01'),
             maNhom: Yup.string().required('Mã nhóm không được để trống'),
         }),
         onSubmit: (values) => {

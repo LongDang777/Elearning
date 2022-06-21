@@ -1,9 +1,10 @@
-import { quanLyNguoiDungServices } from '../../services/QuanLyNguoiDungService';
+import { quanLyNguoiDungService } from "../../services/QuanLyNguoiDungService";
+
 
 export const LoginAction = (userLogin) => {
     return async (dispatch) => {
         try {
-            const result = await quanLyNguoiDungServices.dangNhap(userLogin)
+            const result = await quanLyNguoiDungService.dangNhap(userLogin)
             if (result.status === 200) {
                 dispatch({
                     type: 'LOGIN_USER',
@@ -11,7 +12,6 @@ export const LoginAction = (userLogin) => {
                 })
             }
         }
-
         catch (errors) {
             console.log(errors);
         }

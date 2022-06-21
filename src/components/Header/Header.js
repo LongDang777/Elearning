@@ -2,26 +2,17 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import Login from '../Form/Login';
-import { Badge, Modal, Drawer } from 'antd';
+import { Modal } from 'antd';
 import Register from '../Form/Register';
 import styled from 'styled-components';
 import LogOut from '../Form/Logout';
-import { ShoppingCartOutlined } from '@ant-design/icons';
+import Cart from './Cart';
 
 export default function Header(props) {
   const dispatch = useDispatch();
   const { Component, isVisible } = useSelector((state) => state.ModalReducer);
   const { userLogin } = useSelector((state) => state.QuanLyNguoiDungReducer);
   const [title, setTitle] = useState('');
-  const [visible, setVisible] = useState(false);
-
-  const showDrawer = () => {
-    setVisible(true);
-  };
-
-  const onClose = () => {
-    setVisible(false);
-  };
 
   const handleCancel = () => {
     dispatch({
@@ -80,7 +71,7 @@ export default function Header(props) {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/">
+              <NavLink className="nav-link" to="/allcourse">
                 COURSE
               </NavLink>
             </li>
@@ -89,20 +80,7 @@ export default function Header(props) {
             {!!userLogin.taiKhoan ? (
               <div className="d-flex align-items-center">
                 <LogOut />
-                <Badge count={5} className="ml-10">
-                  <ShoppingCartOutlined onClick={showDrawer} />
-                </Badge>
-                <Drawer
-                  title="Basic Drawer"
-                  placement="right"
-                  onClose={onClose}
-                  visible={visible}
-                  width={500}
-                >
-                  <p>Some contents...</p>
-                  <p>Some contents...</p>
-                  <p>Some contents...</p>
-                </Drawer>
+                <Cart />
               </div>
             ) : (
               <>
@@ -151,6 +129,9 @@ const HeaderWrapper = styled.header`
   .wrapper-container {
     width: 90%;
     margin: auto;
+  }
+
+  .logo-img {
   }
 
   .navbar-brand {
