@@ -87,7 +87,7 @@ export default function ItemCourse(props) {
               <div className="detail-course">
                 <NavLink
                   className="btn--black"
-                  to={`/home/detail-course/${course.maKhoaHoc}`}
+                  to={`/coursedetail/${course.maKhoaHoc}`}
                 >
                   Chi Tiết
                 </NavLink>
