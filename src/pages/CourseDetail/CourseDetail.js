@@ -3,7 +3,10 @@ import { Rate } from "antd";
 import { NavLink } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { layThongTinKhoaHocAction } from "../../redux/actions/QuanLyKhoaHocAction";
+import {
+  dangKyKhoaHoc,
+  layThongTinKhoaHocAction,
+} from "../../redux/actions/QuanLyKhoaHocAction";
 
 const CourseDetail = () => {
   const { id } = useParams();
@@ -16,6 +19,10 @@ const CourseDetail = () => {
   const infoCourse = useSelector(
     (state) => state.QuanLyKhoaHocReducer.thongTinKH
   );
+
+  const handleRegisterCourse = (data) => {
+    dispatch(dangKyKhoaHoc(data));
+  };
 
   return (
     <section className="detail-Course">
@@ -130,6 +137,18 @@ const CourseDetail = () => {
                   <img src={infoCourse.hinhAnh} alt="#" />
                 </div>
               </div>
+              <button
+                className="btn--red mt-5"
+                onClick={() => {
+                  const data = {
+                    maKhoaHoc: infoCourse.maKhoaHoc,
+                    taiKhoan: "Sangadmin1",
+                  };
+                  handleRegisterCourse(data);
+                }}
+              >
+                ĐĂNG KÍ KHÓA HỌC
+              </button>
             </div>
             <div className="col-4">
               <div className="FearureCourse">
