@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
-import { UncontrolledPopover, PopoverBody } from 'reactstrap';
-import { NavLink } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import Swal from 'sweetalert2';
-import { themGioHangAction } from '../../redux/actions/QuanLyKhoaHocAction';
+import React, { useEffect } from "react";
+import { UncontrolledPopover, PopoverBody } from "reactstrap";
+import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import Swal from "sweetalert2";
+import { themGioHangAction } from "../../redux/actions/QuanLyKhoaHocAction";
 
 export default function ItemCourse(props) {
   useEffect(() => {
@@ -17,16 +17,16 @@ export default function ItemCourse(props) {
     window.scroll({
       top: 0,
       left: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
   const addToCart = () => {
-    localStorage.getItem('LOGIN_USER')
+    localStorage.getItem("LOGIN_USER")
       ? dispatch(themGioHangAction(course))
       : Swal.fire({
-          position: 'center',
-          icon: 'error',
+          position: "center",
+          icon: "error",
           html: `<h3 style="color:#f27474"><b>ERROR!</b></h3><b>VUI LÒNG ĐĂNG NHẬP</b>`,
           showConfirmButton: false,
           timer: 1500,
@@ -68,7 +68,7 @@ export default function ItemCourse(props) {
       <UncontrolledPopover
         trigger="hover"
         placement="right"
-        target={'Popover-' + props.id}
+        target={"Popover-" + props.id}
       >
         <PopoverBody>
           <div className="course-info">
@@ -79,7 +79,7 @@ export default function ItemCourse(props) {
                 {course.danhMucKhoaHoc.tenDanhMucKhoaHoc}
               </p>
               <span className="more-infomation">
-                <i className="fa fa-eye"></i> {course.luotXem} |{' '}
+                <i className="fa fa-eye"></i> {course.luotXem} |{" "}
                 <i className="fa fa-mortar-board"></i>
                 {course.soLuongHocVien} | <i className="fa fa-heart"></i> 99
               </span>
@@ -87,7 +87,7 @@ export default function ItemCourse(props) {
               <div className="detail-course">
                 <NavLink
                   className="btn--black"
-                  to={`/home/detail-course/${course.maKhoaHoc}`}
+                  to={`/coursedetail/${course.maKhoaHoc}`}
                 >
                   Chi Tiết
                 </NavLink>
@@ -101,7 +101,7 @@ export default function ItemCourse(props) {
   };
 
   return (
-    <div id={'Popover-' + props.id} className="ItemCourses">
+    <div id={"Popover-" + props.id} className="ItemCourses">
       <div className="allCourse-item ">
         <div className="image">
           <div className="wrap-img">
@@ -125,7 +125,7 @@ export default function ItemCourse(props) {
                 <div className="more-infomation">
                   <div className="more-info-item">
                     <span>
-                      <i className="fa fa-graduation-cap"> </i>{' '}
+                      <i className="fa fa-graduation-cap"> </i>{" "}
                       <span>Học viên</span>
                       <p>{course.soLuongHocVien}</p>
                     </span>
@@ -139,11 +139,11 @@ export default function ItemCourse(props) {
                   </div>
                   <div className="more-info-item">
                     <span>
-                      {' '}
+                      {" "}
                       <span className="dollar">
                         <label>Khoá Học</label>
-                        <p style={{ fontSize: '16px' }}>
-                          {course.danhMucKhoaHoc.tenDanhMucKhoaHoc}{' '}
+                        <p style={{ fontSize: "16px" }}>
+                          {course.danhMucKhoaHoc.tenDanhMucKhoaHoc}{" "}
                         </p>
                       </span>
                     </span>

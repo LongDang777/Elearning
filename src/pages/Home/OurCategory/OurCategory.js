@@ -15,9 +15,14 @@ const OurCategory = () => {
     <div className="category">
       <h1 className="title">Our Category</h1>
       <div className="container">
-        <div className="d-flex justify-content-around">
+        <div className="row d-flex justify-content-around">
           {danhMucKhoaHoc.map((item, index) => (
-            <ItemCategory key={index} img={index + 1} category={item} />
+            <ItemCategory
+              className="col-xl-2 col-lg-4 p-4"
+              key={index}
+              img={index + 1}
+              category={item}
+            />
           ))}
         </div>
         <img src="../src/assets/image/category/1.jpg" width={100} alt="" />

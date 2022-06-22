@@ -27,5 +27,58 @@
   }
   .container {
     margin-top: 80px;
+    .item-category {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (min-width : 375px) and  (max-width : 736px){
+  /* Styles */
+  .category {
+    .title {
+      font-size: 16px;
+      &::before,
+    &::after {
+      width: 38px;
+      margin-right: 12px;
+    }
+    &::after {
+      margin-left: 12px;
+    }
+    }
+    .container {
+      .item-category {
+        h6 {
+          font-size: 12px;
+        }
+
+      }
+    }
+  }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+  /* Styles */
+  .category {
+    .title {
+      &::before,
+    &::after {
+      width: 150px;
+      margin-right: 12px;
+    }
+    &::after {
+      margin-left: 12px;
+    }
+    }
+    .container {
+      .item-category {
+        h6 {
+          font-size: 18px;
+        }
+      }
+    }
   }
 }
