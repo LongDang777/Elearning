@@ -78,10 +78,20 @@ export const dangKyKhoaHoc = (data) => {
     }
   };
 };
+
 export const themGioHangAction = (data) => {
   return (dispatch) => {
     dispatch({
       type: "THEM_GIO_HANG",
+      data,
+    });
+  };
+};
+
+export const xoaGioHangAction = (data) => {
+  return (dispatch) => {
+    dispatch({
+      type: "XOA_GIO_HANG",
       data,
     });
   };

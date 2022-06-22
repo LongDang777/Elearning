@@ -1,10 +1,15 @@
+let listCart = [];
+if (localStorage.getItem("LIST_CART")) {
+  listCart = JSON.parse(localStorage.getItem("LIST_CART"));
+}
+
 const stateDefaut = {
   mangKhoaHoc: [],
   thongTinKH: {},
   mangDMKhoaHoc: [],
   mangKHTheoDanhMuc: [],
   thongtinDK: {},
-  gioHang: [],
+  gioHang: listCart,
 };
 export const QuanLyKhoaHocReducer = (state = stateDefaut, action) => {
   switch (action.type) {
@@ -29,9 +34,14 @@ export const QuanLyKhoaHocReducer = (state = stateDefaut, action) => {
       });
       if (index === -1) {
         state.gioHang = [...state.gioHang, action.data];
+        localStorage.setItem("LIST_CART", JSON.stringify(state.gioHang));
       }
       return { ...state };
-
+    case "XOA_GIO_HANG":
+      state.gioHang = state.gioHang.filter((item) => {
+        return item.maKhoaHoc !== action.data.maKhoaHoc;
+      });
+      return { ...state };
     default:
       return state;
   }

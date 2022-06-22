@@ -11,7 +11,6 @@ export default function ItemCourse(props) {
   });
   const { course, courseOfUser } = props;
   const dispatch = useDispatch();
-
   const { gioHang } = useSelector((state) => state.QuanLyKhoaHocReducer);
 
   const goTop = () => {
@@ -88,7 +87,7 @@ export default function ItemCourse(props) {
               <div className="detail-course">
                 <NavLink
                   className="btn--black"
-                  to={`/coursedetail/${course.maKhoaHoc}`}
+                  to={`/home/detail-course/${course.maKhoaHoc}`}
                 >
                   Chi Tiết
                 </NavLink>
