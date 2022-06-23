@@ -24,7 +24,6 @@
         "route": "/admin/addcourses",
         "icon": "bx bx-book-add"
     },
-    
     {
         "display_name": "Categories",
         "route": "/categories",

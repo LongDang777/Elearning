@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import ProfileBanner from './Avatar';
 import ProfileForm from './ProfileForm';
-import RegisteredCourse from './RegisteredCourse';
 import MyCourse from './MyCourse';
 
 export default function Profile() {
@@ -15,11 +14,6 @@ export default function Profile() {
       key: 'account',
       label: 'Thông tin tài khoản',
       component: ProfileForm,
-    },
-    {
-      key: 'registeredCourse',
-      label: 'Khóa học ghi danh',
-      component: RegisteredCourse,
     },
     {
       key: 'myCourse',

@@ -13,10 +13,8 @@ import { LockOutlined, MailOutlined, PhoneOutlined, UserAddOutlined, UserOutline
 import { useSelector } from 'react-redux';
 import { CapNhatThongTinNguoiDungAction, layThongTinNguoiDungAction } from '../../redux/actions/QuanLyNguoiDungAction';
 
-
-
 const EditUser = (props) => {
-  
+
   const [componentSize, setComponentSize] = useState('default');
   const dispatch = useDispatch();
   useEffect(() => {
@@ -49,9 +47,7 @@ const EditUser = (props) => {
       dispatch(action);
     },
   })
-
   return (
-
     <Form
       onSubmitCapture={formik.handleSubmit}
       labelCol={{ span: 4 }}
@@ -60,7 +56,6 @@ const EditUser = (props) => {
       <h1>Trên Api ko có dữ liệu taiKhoan để edit bất kì  tài khoản nào,
         chỉ edit dc 1 tài khoản đang đăng nhập trong profile
       </h1>
-
       <Form.Item label="Tài Khoản" className='mt-4'>
         <Input name='taiKhoan' disabled value={formik.values.taiKhoan} prefix={<UserAddOutlined />} allowClear />
       </Form.Item>

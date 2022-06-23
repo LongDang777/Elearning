@@ -93,7 +93,6 @@ export default function Courses() {
     {
       title: 'Hành Động',
       dataIndex: 'maPhim',
-
       render: (text, khoaHoc) => {
         return (
           <Fragment>
@@ -108,10 +107,8 @@ export default function Courses() {
               }} />
           </Fragment>)
       },
-
     },
   ];
-
 
   const data = mangKhoaHoc
 

@@ -87,7 +87,7 @@ export const CapNhatThongTinKhoaHocAction = (formData) =>{
           history.push('/admin/courses')
           dispatch(layDanhSachKhoaHocAction())   
       }catch(err){
-        message.warning(err.response.data)
+        message.warning(err.message)
         console.log('err',err.response.data);
       }
   }

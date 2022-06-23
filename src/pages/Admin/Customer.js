@@ -10,16 +10,12 @@ import { layDanhSachNguoiDungAction, xoaNDAction } from '../../redux/actions/Qua
 
 export default function Customer() {
 
-
   const dispatch = useDispatch();
   useEffect(()=>{ 
     dispatch(layDanhSachNguoiDungAction())
   },[])
 
-  
   const mangND = useSelector(state=> state.QuanLyNguoiDungReducer.mangND)
-  
-  
   
   const columns = [
     { 
@@ -72,7 +68,6 @@ export default function Customer() {
     {
       title: 'Hành Động',
       dataIndex: 'taiKhoan',
-      
       render: (text, ND) => {
         return (
           <Fragment key={`${ND.taiKhoan}`} >
@@ -89,7 +84,6 @@ export default function Customer() {
     },
     
   ];
-  
   
   const { Search } = Input;
   

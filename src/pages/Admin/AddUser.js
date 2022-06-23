@@ -7,10 +7,8 @@ import { layDanhSachNguoiDungAction, themNguoiDungAction } from '../../redux/act
 import { LockOutlined, MailOutlined, PhoneOutlined, UserAddOutlined, UserOutlined } from '@ant-design/icons';
 import { useEffect } from 'react';
 
-
 export default function AddUser() {
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(layDanhSachNguoiDungAction())
   }, [])
@@ -36,7 +34,6 @@ export default function AddUser() {
       taiKhoan: Yup.string().trim('Tài khoản không được để trống').required('Tài khoản không được để trống').notOneOf(userName, 'Tài khoản bị trùng'),
       email: Yup.string()
         .email('Email không đúng định dạng').trim('Email không được để trống').required('Email không được để trống').notOneOf(userMail, 'Email bị trùng'),
-
     }),
     onSubmit: values => {
       values.maNhom = 'GP01'
@@ -52,7 +49,6 @@ export default function AddUser() {
         labelCol={{ span: 6 }}
         wrapperCol={{ span: 8 }}>
         <h2 className='mb-5'>Thêm người dùng mới</h2>
-
         <Form.Item label="Tài Khoản" className='mt-4'>
           <Input name='taiKhoan' placeholder='Tài Khoản' prefix={<UserAddOutlined />} allowClear
             onChange={formik.handleChange} onBlur={formik.handleBlur} />
@@ -60,7 +56,6 @@ export default function AddUser() {
             ? (<div className='alert alert-danger'>{formik.errors.taiKhoan}</div>)
             : null}
         </Form.Item>
-
         <Form.Item label="Họ Tên" name='hoTen' onChange={formik.handleChange}
           rules={[
             {
@@ -165,7 +160,6 @@ export default function AddUser() {
         <Form.Item label="Tác Vụ">
           <Button block htmlType='submit' type='primary'>Thêm người dùng</Button>
         </Form.Item>
-
       </Form>
     </div>
   );
