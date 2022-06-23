@@ -6,7 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   dangKyKhoaHoc,
   layThongTinKhoaHocAction,
+  themGioHangAction,
 } from "../../redux/actions/QuanLyKhoaHocAction";
+import Swal from "sweetalert2";
 
 const CourseDetail = () => {
   const { id } = useParams();
@@ -21,7 +23,27 @@ const CourseDetail = () => {
   );
 
   const handleRegisterCourse = (data) => {
-    dispatch(dangKyKhoaHoc(data));
+    localStorage.getItem("LOGIN_USER")
+      ? dispatch(dangKyKhoaHoc(data))
+      : Swal.fire({
+          position: "center",
+          icon: "error",
+          html: `<h3 style="color:#f27474"><b>ERROR!</b></h3><b>VUI LÒNG ĐĂNG NHẬP</b>`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+  };
+
+  const addToCart = (infoCourse) => {
+    localStorage.getItem("LOGIN_USER")
+      ? dispatch(themGioHangAction(infoCourse))
+      : Swal.fire({
+          position: "center",
+          icon: "error",
+          html: `<h3 style="color:#f27474"><b>ERROR!</b></h3><b>VUI LÒNG ĐĂNG NHẬP</b>`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
   };
 
   return (
@@ -111,12 +133,7 @@ const CourseDetail = () => {
                           <button
                             className="btn--blue "
                             onClick={() => {
-                              this.props.addToCart({
-                                course: {
-                                  ...infoCourse,
-                                  fee: infoCourse.fee,
-                                },
-                              });
+                              addToCart(infoCourse);
                             }}
                           >
                             Thêm vào giỏ hàng{" "}
