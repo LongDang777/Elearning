@@ -11,6 +11,7 @@ const stateDefaut = {
   userLogin: user,
   userInfo: {},
   mangND: [],
+  thongTinND: {},
   thongTinTK: userInfo,
 };
 
@@ -35,6 +36,11 @@ export const QuanLyNguoiDungReducer = (state = stateDefaut, action) => {
       state.mangND = action.mangND;
       return { ...state };
     case 'LAY_THONGTIN_TK':
+      state.thongTinTK = action.thongTinTK
+      return { ...state }
+    case 'LAY_THONGTIN_ND':
+      state.thongTinND = action.thongTinND
+      return { ...state }
       const { thongTinTK } = action;
       localStorage.setItem('USER_INFO', JSON.stringify(thongTinTK));
       state.thongTinTK = thongTinTK;

@@ -2,10 +2,17 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Space, Row, Col, Button } from 'antd';
 import styled from 'styled-components';
-import { xoaGioHangAction } from '../../redux/actions/QuanLyKhoaHocAction';
+import { dangKyKhoaHoc, xoaGioHangAction } from '../../redux/actions/QuanLyKhoaHocAction';
 
 export default function CartItem({ item, isMyCourse }) {
   const dispatch = useDispatch();
+
+  const TkLogin = JSON.parse(localStorage.getItem('LOGIN_USER'))
+
+  const handleRegisterCourse = (data) => {
+    dispatch(dangKyKhoaHoc(data));
+  };
+
   return (
     <CartItemWrapper className="cart-item">
       <Space>
@@ -18,7 +25,13 @@ export default function CartItem({ item, isMyCourse }) {
                 <div className="item-views">{`Lượt xem: ${item.luotXem} views`}</div>
               </Col>
               <Col sm={8} xs={10} className="isMyCourse">
-                <Button type="primary">Đăng Ký</Button>
+                <Button type="primary" onClick={() => {
+                  const data = {
+                    maKhoaHoc: item.maKhoaHoc,
+                    taiKhoan: TkLogin.taiKhoan,
+                  };
+                  handleRegisterCourse(data);
+                }}>Đăng Ký</Button>
                 <Button
                   type="primary"
                   danger
@@ -38,7 +51,13 @@ export default function CartItem({ item, isMyCourse }) {
                 <div className="item-views">{`Lượt xem: ${item.luotXem} views`}</div>
               </Col>
               <Col sm={8} xs={6}>
-                <Button type="primary">Đăng Ký</Button>
+                <Button type="primary" onClick={() => {
+                  const data = {
+                    maKhoaHoc: item.maKhoaHoc,
+                    taiKhoan: TkLogin.taiKhoan,
+                  };
+                  handleRegisterCourse(data);
+                }}>Đăng Ký</Button>
                 <Button
                   type="primary"
                   danger

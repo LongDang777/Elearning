@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
 import { themGioHangAction } from "../../redux/actions/QuanLyKhoaHocAction";
+import photo from '../../assets/img/user-image.png'
 
 export default function ItemCourse(props) {
   useEffect(() => {
@@ -113,7 +114,7 @@ export default function ItemCourse(props) {
           <div className="teacher-img">
             <div className="row m-0 align-center">
               <div className="col-3 left-side ">
-                <img src="https://png2.cleanpng.com/sh/49e71ec747d14c343e07ff1250a2ecab/L0KzQYm3WcIxN6pngJH0aYP2gLBuTfNwdaF6jNd7LXnmf7B6TgBweqVmet5uLX7ohMj2kvsub6NmiNpyY4OwccfolPFzNZpoRadrYUPmRofsU8A3amI6RqICNUa1R4KAUcU0P2U6Uao7MkG8SIS1kP5o/kisspng-computer-icons-portable-network-graphics-avatar-ic-5ba3c66e306b15.0756271715374598221983.png" />
+                <img src={photo} />
                 <div className="teacher-name">
                   <span> {course ? course.nguoiTao.hoTen : null} </span>
                 </div>

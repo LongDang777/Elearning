@@ -1,0 +1,69 @@
+.addcourse{
+  h2{
+    font-family: "Roboto", sans-serif;
+    color: var(--color-dark);
+  }
+  .ant-form-item-label > label{
+    font-family: "Roboto", sans-serif;
+    color: var(--color-dark);
+  }
+  .anticon svg {
+    color: var(--color-dark);
+  }
+  .ant-input-affix-wrapper {
+    background: var(--color-white)
+  }
+  .ant-input-affix-wrapper > input.ant-input {
+    background: var(--color-white);
+    color: var(--color-dark);
+    border: none;
+  }
+  .ant-form-item-control-input-content {
+    input{
+      background: var(--color-white);
+      color: var(--color-dark);
+    }
+  }
+  .ant-select{
+    background: var(--color-white);
+  }
+  .ant-input-affix-wrapper-status-error:not(.ant-input-affix-wrapper-disabled):not(.ant-input-affix-wrapper-borderless).ant-input-affix-wrapper, .ant-input-affix-wrapper-status-error:not(.ant-input-affix-wrapper-disabled):not(.ant-input-affix-wrapper-borderless).ant-input-affix-wrapper:hover {
+    background: var(--color-white);
+  }
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    background: var(--color-white);
+  }
+  .ant-select-dropdown-hidden{
+    background: var(--color-white);
+  }
+  .ant-select-selection-item{
+    color: var(--color-dark);
+  }
+  .ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+    background: var(--color-white);
+  }
+  .ant-input-affix-wrapper-focused{
+    background: var(--color-white);
+  }
+  .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover{
+    background: var(--color-white);
+  }
+}
+
+@media screen and (max-width:1920px) {
+  .addcourse{
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width:1200px) {
+  .addcourse{
+    margin-top: 7rem;
+    padding: 0 1rem 3rem 1rem;
+  }
+}
+// @media screen and (max-width:414px) {
+//   .addcourse{
+//     padding: 0 1rem 3rem 1rem;
+//   }
+// }

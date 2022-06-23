@@ -24,6 +24,8 @@ const CourseDetail = () => {
     dispatch(dangKyKhoaHoc(data));
   };
 
+  const taiKhoanLogin = JSON.parse(localStorage.getItem('LOGIN_USER'))
+
   return (
     <section className="detail-Course">
       <div className="wrap-detailCourse">
@@ -142,7 +144,7 @@ const CourseDetail = () => {
                 onClick={() => {
                   const data = {
                     maKhoaHoc: infoCourse.maKhoaHoc,
-                    taiKhoan: "Sangadmin1",
+                    taiKhoan: taiKhoanLogin.taiKhoan,
                   };
                   handleRegisterCourse(data);
                 }}

@@ -1,6 +1,6 @@
-import { quanLyNguoiDungService } from '../../services/QuanLyNguoiDungService';
-import { message } from 'antd';
-// import { displayLoadingAction, hiddenLoadingAction } from "./LoadingAction";
+import { message } from "antd";
+import { history } from "../../App";
+import { quanLyNguoiDungService } from "../../services/QuanLyNguoiDungService";
 
 export const layDanhSachNguoiDungAction = (tuKhoa = '') => {
   return async (dispatch) => {
@@ -27,8 +27,60 @@ export const layThongTinTaiKhoanAction = () => {
     } catch (err) {
       console.log('Lỗi lấy thông tin tài khoản: ', err);
     }
-  };
-};
+  }
+}
+export const layThongTinNguoiDungAction = (taiKhoan) => {
+  return async (dispatch) => { 
+    try {
+      let result = await quanLyNguoiDungService.layThongTinNguoiDung(taiKhoan);
+      dispatch({
+        type: "LAY_THONGTIN_ND",
+        thongTinND: result.data
+      }) 
+    } catch (err) {    
+      console.log("Lỗi lấy thong tin người dùng: ", err);
+    }
+  }
+}
+export const xoaNDAction = (taiKhoan) => {
+  return async (dispatch)=>{
+      try {
+          let result = await quanLyNguoiDungService.xoaND(taiKhoan);
+          message.success('Xoá tài khoản thành công')
+          dispatch(layDanhSachNguoiDungAction())  
+      }catch(err){
+          message.warning(err.response.data)
+          console.log('err',err);
+      }
+  }
+}
+export const themNguoiDungAction = (formData) =>{
+  return async (dispatch)=>{
+      try {
+          let result = await quanLyNguoiDungService.themNguoiDung(formData);
+          message.success('Thêm người dùng thành công')
+          history.push('/admin/customers')
+      }catch(err){
+        message.warning(err.response.data)
+          console.log('err',err.response.data);
+          
+      }
+  }
+}
+
+export const CapNhatThongTinNguoiDungAction = (formData) =>{
+  return async (dispatch)=>{
+      try {
+          let result = await quanLyNguoiDungService.capNhatThongTinNguoiDung(formData);
+          message.success('Cập nhật người dùng thành công')
+          history.push('/admin/customers')
+          dispatch(layDanhSachNguoiDungAction())   
+      }catch(err){
+        message.warning(err.response.data)
+          console.log('err',err.response.data);
+      }
+  }
+}
 
 export const capNhatThongTinTaiKhoanAction = (newUserInfo) => {
   return async (dispatch) => {
@@ -36,10 +88,10 @@ export const capNhatThongTinTaiKhoanAction = (newUserInfo) => {
       let result = await quanLyNguoiDungService.capNhatThongTinTaiKhoan(
         newUserInfo,
       );
-      // dispatch({
-      //   type: 'CAP_NHAT_THONGTIN_TK',
-      //   newUserInfo: result.data,
-      // });
+      dispatch({
+        type: 'CAP_NHAT_THONGTIN_TK',
+        newUserInfo: result.data,
+      });
       message.success('Cập nhât thành công');
     } catch (err) {
       console.log('Lỗi cập nhật tin tài khoản: ', err);

@@ -40,10 +40,8 @@ class QuanLyKhoaHocServices {
   xoaKhoaHoc=(maKhoaHoc)=>{
     return http.delete(`/api/QuanLyKhoaHoc/XoaKhoaHoc?maKhoaHoc=${maKhoaHoc}`) 
   }
-  
-
-
-
-
+  themKhoaHocUpLoadHinh = (formData) => {
+    return http.post(`/api/QuanLyKhoaHoc/ThemKhoaHocUploadHinh`, formData)
+  }
 }
 export const quanLyKhoaHocServices = new QuanLyKhoaHocServices();
