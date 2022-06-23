@@ -6,13 +6,13 @@ import { capNhatThongTinTaiKhoanAction } from '../../redux/actions/QuanLyNguoiDu
 
 export default function ProfileForm({ user }) {
   const [form] = Form.useForm();
-  const { thongTinTK } = useSelector((state) => state.QuanLyNguoiDungReducer);
+  const { userLogin } = useSelector((state) => state.QuanLyNguoiDungReducer);
   const dispatch = useDispatch();
 
   const onFinish = (values) => {
     let { email, hoTen, matKhau, soDT, taiKhoan } = values;
     const newUserInfo = {
-      ...thongTinTK,
+      ...userLogin,
       email,
       hoTen,
       matKhau,
@@ -28,7 +28,7 @@ export default function ProfileForm({ user }) {
       <Form
         layout="vertical"
         form={form}
-        initialValues={thongTinTK}
+        initialValues={userLogin}
         onFinish={onFinish}
       >
         <Row gutter={[20, 20]}>

@@ -7,7 +7,7 @@ import MyCourse from './MyCourse';
 
 export default function Profile() {
   const { TabPane } = Tabs;
-  const { thongTinTK } = useSelector((state) => state.QuanLyNguoiDungReducer);
+  const { userLogin } = useSelector((state) => state.QuanLyNguoiDungReducer);
 
   const MENU_PROFILE = [
     {
@@ -27,21 +27,21 @@ export default function Profile() {
       <div className="profile-desktop">
         <TabsWrapper
           tabPosition="left"
-          tabBarExtraContent={{ left: <ProfileBanner user={thongTinTK} /> }}
+          tabBarExtraContent={{ left: <ProfileBanner user={userLogin} /> }}
         >
           {MENU_PROFILE.map((tab) => (
             <TabPane tab={tab.label} key={tab.key}>
-              <tab.component user={thongTinTK} />
+              <tab.component user={userLogin} />
             </TabPane>
           ))}
         </TabsWrapper>
       </div>
       <div className="profile-mobile ">
-        <ProfileBanner user={thongTinTK} />
+        <ProfileBanner user={userLogin} />
         <TabsWrapper centered>
           {MENU_PROFILE.map((tab) => (
             <TabPane tab={tab.label} key={tab.key}>
-              <tab.component user={thongTinTK} />
+              <tab.component user={userLogin} />
             </TabPane>
           ))}
         </TabsWrapper>
