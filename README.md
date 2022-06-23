@@ -1,7 +1,7 @@
 Phân chia tast:
 
 Kỳ: ,Header, giỏ hàng, profile
-Dũng: trang Home, chi tiết khoá học, đăn kí khoá học
+Dũng: trang Home, chi tiết khoá học, đăng kí khoá học
 Long: component /allcourse, phần Admin
 
 link deploy: http://elearninggroup3.surge.sh/

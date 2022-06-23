@@ -9,6 +9,8 @@ export const Admintemplate = (props) => {
 
   const LOGIN_USER = JSON.parse(localStorage.getItem("LOGIN_USER"));
 
+  
+
   return (
     <Route exact path={props.path} render={propsRoute => {
       return (

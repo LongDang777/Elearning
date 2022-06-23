@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { LoginAction } from '../../redux/actions/LoginAction';
 import { layThongTinTaiKhoanAction } from '../../redux/actions/QuanLyNguoiDungAction';
+import { history } from '../../App';
 // import { history } from '../../App';
 
 export default function Login() {
@@ -36,10 +37,10 @@ export default function Login() {
         isVisible: false,
       });
     }
-    // if (userLogin.maLoaiNguoiDung === 'QuanTri') {
-    //     alert('Bạn là thành viên của Quản trị viên, trình duyệt sẽ chuyển sang trang quản trị')
-    //     history.push('/admin')
-    // }
+    if (userLogin.maLoaiNguoiDung === 'GV') {
+        alert('Bạn là thành viên của Quản trị viên, trình duyệt sẽ chuyển sang trang quản trị')
+        history.push('/admin')
+    }
   }, [userLogin]);
 
   const getUserInfo = () => {
