@@ -7,8 +7,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import moment from 'moment'
 import { LockOutlined, MailOutlined, PhoneOutlined, UserAddOutlined, UserOutlined } from '@ant-design/icons';
 import { useEffect } from 'react';
-import { layDanhSachKhoaHocAction, themKhoaHocAction } from '../../redux/actions/QuanLyKhoaHocAction';
-import { layDanhMucKhoaHocAction } from '../../redux/actions/DanhMucKhoaHoc';
+import { layDanhSachKhoaHocAction, themKhoaHocAction, layDanhMucKhoaHocAction } from '../../redux/actions/QuanLyKhoaHocAction';
+
 
 
 export default function AddCourses() {

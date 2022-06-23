@@ -59,7 +59,7 @@ const Course = ({ course }) => {
             <div className="btn-group">
               <NavLink
                 className="btn--white btnn"
-                to={`/home/detail-course/${course.maKhoaHoc}?${course.fee}`}
+                to={`/coursedetail/${course.maKhoaHoc}`}
               >
                 CHI TIẾT
               </NavLink>

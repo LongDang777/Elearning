@@ -1,3 +1,4 @@
+import { message } from 'antd'
 import React from 'react'
 import { NavLink, Route } from 'react-router-dom'
 import logo from '../../assets/img/logo.jpg'
@@ -6,11 +7,7 @@ import Sidebar from '../../components/Admin/sidebar/Sidebar'
 
 export const Admintemplate = (props) => {
 
-  
-
-
   const LOGIN_USER = JSON.parse(localStorage.getItem("LOGIN_USER"));
-
 
   return (
     <Route exact path={props.path} render={propsRoute => {

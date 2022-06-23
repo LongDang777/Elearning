@@ -1,43 +1,33 @@
 import { message } from "antd";
 import { history } from "../../App";
 import { quanLyKhoaHocServices } from "../../services/QuanLyKhoaHocServices";
-//animation chờ 
-import { displayLoadingAction, hiddenLoadingAction } from "./LoadingAction";
 
-
-export const layDanhSachKhoaHocAction = (tenKhoaHoc = '') => {
+export const layDanhSachKhoaHocAction = (tenKhoaHoc = "") => {
   return async (dispatch) => {
-
-    dispatch(displayLoadingAction)
     try {
       let result = await quanLyKhoaHocServices.laydanhSachKhoaHoc(tenKhoaHoc);
       dispatch({
         type: "LAY_DS_KHOAHOC",
-        mangKhoaHoc: result.data
-      })
-      dispatch(hiddenLoadingAction)
+        mangKhoaHoc: result.data,
+      });
     } catch (err) {
-      dispatch(hiddenLoadingAction)
       console.log("Lỗi lấy ds khoá học: ", err);
     }
-  }
-}
+  };
+};
 export const layThongTinKhoaHocAction = (maKhoaHoc) => {
   return async (dispatch) => {
-    dispatch(displayLoadingAction)
     try {
       let result = await quanLyKhoaHocServices.layThongTinKhoaHoc(maKhoaHoc);
       dispatch({
         type: "LAY_TT_KHOAHOC",
-        thongTinKH: result.data
-      })
-      dispatch(hiddenLoadingAction)
+        thongTinKH: result.data,
+      });
     } catch (err) {
-      dispatch(hiddenLoadingAction)
       console.log("Lỗi lấy thong tin khoá học: ", err);
     }
-  }
-}
+  };
+};
 export const layDanhMucKhoaHocAction = () => {
   return async (dispatch) => {
     try {
@@ -51,19 +41,15 @@ export const layDanhMucKhoaHocAction = () => {
     }
   };
 };
-export const layKhoaHocTheoDanhMuc = (maDanhMuc = '') => {
+export const layKhoaHocTheoDanhMuc = (maDanhMuc = "") => {
   return async (dispatch) => {
-
-    dispatch(displayLoadingAction)
     try {
       let result = await quanLyKhoaHocServices.layKhoaHocTheoDanhMuc(maDanhMuc);
       dispatch({
         type: "LAY_KH_THEODANHMUC",
-        mangKHTheoDanhMuc: result.data
-      })
-      dispatch(hiddenLoadingAction)
+        mangKHTheoDanhMuc: result.data,
+      });
     } catch (err) {
-      dispatch(hiddenLoadingAction)
       console.log("Lỗi lấy khoá học theo danh mục: ", err);
     }
   }
@@ -106,12 +92,35 @@ export const CapNhatThongTinKhoaHocAction = (formData) =>{
       }
   }
 }
+export const dangKyKhoaHoc = (data) => {
+  return async (dispatch) => {
+    try {
+      let result = await quanLyKhoaHocServices.dangKyKhoaHoc(data);
+      message.success("Đăng kí hkhóa học thành công");
+      dispatch({
+        type: "DANGKY_KHOAHOC",
+        thongtinDK: result.data,
+      });
+    } catch (error) {
+      message.warning("Khóa học đã được đăng ký");
+    }
+  };
+};
 
-export const themGioHangAction = data =>{
-  return dispatch => {
+export const themGioHangAction = (data) => {
+  return (dispatch) => {
     dispatch({
-			type: 'THEM_GIO_HANG',
-			data,
-		});
-  }
-}
+      type: "THEM_GIO_HANG",
+      data,
+    });
+  };
+};
+
+export const xoaGioHangAction = (data) => {
+  return (dispatch) => {
+    dispatch({
+      type: "XOA_GIO_HANG",
+      data,
+    });
+  };
+};
