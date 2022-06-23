@@ -7,6 +7,7 @@ import {Provider} from 'react-redux';
 import {store} from "./redux/configStore";
 
 
+document.title = 'Elearning Group 3'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

@@ -1,3 +1,4 @@
+
 //helps
 @import "./assets/styles/helpers/variables";
 @import "./assets/styles/helpers/mixin";
@@ -11,9 +12,22 @@
 @import "./assets/styles/components/itemCategory";
 @import "./assets/styles/components/itemCourseOfUser.scss";
 @import "./assets/styles/components/coursePopular.scss";
-@import "./assets/styles/components/admin/userManagementModal.scss";
-@import "./assets/styles/components/admin/coursesManagementModal.scss";
-@import "./assets/styles/components/admin/widthModal.scss";
+//admin
+@import "./assets/styles/components/admin/admin.scss";
+@import "./assets/styles/pages/admin/admin.scss";
+@import "./assets/styles/pages/admin/customer.scss";
+@import "./assets/styles/pages/admin/courseManager.scss";
+@import "./assets/styles/pages/admin/adduser.scss";
+@import "./assets/styles/pages/admin/addcourse.scss";
+@import "./assets/styles/pages/admin/adminTemplate.scss";
+@import "./assets/styles/components/admin/sidebar.scss";
+@import "./assets/styles/components/admin/dashboard.scss";
+
+@import "./assets/styles/components/admin/table.scss";
+@import "./assets/styles/components/admin/badge.scss";
+
+
+
 //page
 @import "./assets/styles/pages/PageNotFound.scss";
 @import "./assets/styles/pages/home/Intro.scss";
@@ -33,4 +47,6 @@
 @import "./assets/styles/pages/ProfileUser/profileUser.scss";
 @import "./assets/styles/pages/ProfileUser/CourseAttended.scss";
 @import "./assets/styles/pages/ProfileUser/AccountInfo.scss";
-@import "./assets/styles/pages/admin/courseManagement.scss";
+// boxicon
+@import "./assets/boxicons-2.0.7/css/boxicons.min.scss";
+

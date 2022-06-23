@@ -1,3 +1,5 @@
+import { message } from "antd";
+import { history } from "../../App";
 import { quanLyKhoaHocServices } from "../../services/QuanLyKhoaHocServices";
 //animation chờ 
 import { displayLoadingAction, hiddenLoadingAction } from "./LoadingAction";
@@ -66,6 +68,45 @@ export const layKhoaHocTheoDanhMuc = (maDanhMuc = '') => {
     }
   }
 }
+export const xoaKhoaHocAction = (maKhoaHoc) => {
+  return async (dispatch)=>{
+      try {
+          let result = await quanLyKhoaHocServices.xoaKhoaHoc(maKhoaHoc);
+          message.success('Xoá khoá học thành công')
+          dispatch(layDanhSachKhoaHocAction())  
+      }catch(err){
+          message.warning(err.response.data)
+          console.log('err',err.response.data);
+      }
+  }
+}
+export const themKhoaHocAction = (formData) =>{
+  return async (dispatch)=>{
+      try {
+          let result = await quanLyKhoaHocServices.themKhoaHocUpLoadHinh(formData);
+          message.success('Thêm khoá học thành công')
+          history.push('/admin/courses')
+      }catch(err){
+        message.warning(err.response.data)
+          console.log('Lỗi thêm khoá học: ',err.response.data);
+          
+      }
+  }
+}
+export const CapNhatThongTinKhoaHocAction = (formData) =>{
+  return async (dispatch)=>{
+      try {
+          let result = await quanLyKhoaHocServices.capNhatKhoaHoc(formData);
+          message.success('Cập nhật khoá học thành công')
+          history.push('/admin/courses')
+          dispatch(layDanhSachKhoaHocAction())   
+      }catch(err){
+        message.warning(err.response.data)
+        console.log('err',err.response.data);
+      }
+  }
+}
+
 export const themGioHangAction = data =>{
   return dispatch => {
     dispatch({

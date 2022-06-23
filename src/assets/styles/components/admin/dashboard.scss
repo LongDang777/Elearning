@@ -1,0 +1,303 @@
+
+.dashboard {
+  font-family: "Roboto", sans-serif;
+  display: grid;
+  grid-template-columns: 70rem auto;
+  gap: 2rem;
+  .topnav__search {
+    width: 300px;
+    margin-top: -30px;
+    margin-bottom: 20px;
+    position: relative;
+    height: 50px;
+    color: var(--color-dark);
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+  }
+  
+  .topnav__search > input {
+    height: 100%;
+    width: 100%;
+    padding: 10px 60px 10px 20px;
+    font-size: 1rem;
+    border-radius: var(--border-radius);
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    font-family: 'Roboto',sans-serif;
+  }
+  
+  .topnav__search > i {
+    color: var(--color-dark);
+    font-size: 1.5rem;
+    position: absolute;
+    right: 20px;
+  }
+  .recent-orders{
+    margin-top:1rem ;
+  }
+  .date {
+    display: inline;
+    background: var(--color-background-thead);
+    border-radius: var(--border-radius-1);
+    margin-top: 1rem;
+    padding: 0.5rem 1.6rem;
+    box-shadow: var(--box-shadow);
+    input {
+      background: transparent;
+      color: var(--color-dark);
+    }
+  }
+  .insights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+    h1 {
+      font-family: "Roboto", sans-serif;
+      color: var(--color-dark);
+    }
+    h3 {
+      font-family: "Roboto", sans-serif;
+      color: var(--color-dark);
+      margin: 1rem 0 0.6rem;
+      font-size: 1rem;
+    }
+  }
+}
+.dashboard .insights > div {
+  background: var(--color-white);
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+  margin-top: 1rem;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s ease;
+  &:hover {
+    box-shadow: none;
+  }
+  span {
+    background: var(--color-primary);
+    padding: 0.5rem;
+    border-radius: 50%;
+    color: var(--color-white);
+    font-size: 2rem;
+  }
+  .middle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.dashboard .insights > div.expenses {
+  span {
+    background: var(--color-danger);
+  }
+}
+.dashboard .insights > div.income {
+  span {
+    background: var(--color-success);
+  }
+}
+
+.dashboard .insights {
+  .progressDashboard {
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    .number {
+      font-family: "Roboto", sans-serif;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  svg {
+    width: 7rem;
+    height: 7rem;
+    circle {
+      fill: none;
+      stroke: var(--color-primary);
+      stroke-width: 14;
+      stroke-linecap: round;
+      transform: translate(5px, 5px);
+      stroke-dasharray: 110;
+      stroke-dashoffset: 92;
+    }
+  }
+  .sales svg circle {
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+  }
+  .expenses svg circle {
+    stroke: var(--color-danger);
+    stroke-dashoffset: 20;
+    stroke-dasharray: 80;
+  }
+  .income svg circle {
+    stroke: var(--color-success);
+    stroke-dashoffset: 35;
+    stroke-dasharray: 110;
+  }
+  small {
+    margin-top: 1.3rem;
+    display: block;
+  }
+}
+
+.dashboard .recent-orders {
+  margin-top: 2rem;
+  thead{
+    background: var(--color-white);
+    color: var(--color-dark);
+  }
+  h2 {
+    color: var(--color-dark);
+    margin-bottom: 0.8rem;
+    font-family: "Roboto", sans-serif;
+  }
+  table {
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+    &:hover {
+      box-shadow: none;
+    }
+    tbody {
+      td {
+        border-bottom: 0.5px solid var(--color-light);
+        color: var(--color-dark);
+      }
+      tr:last-child {
+        td {
+          border: none;
+        }
+      }
+    }
+  }
+  .card__footer {
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+  }
+}
+
+//recent update
+
+.right {
+  margin-top: 3.4rem;
+  .recent-updates {
+    margin-top: 1rem;
+    h2 {
+      margin-bottom: 0.8rem;
+      color: var(--color-dark);
+    }
+    .updates {
+      background: var(--color-white);
+      padding: var(--card-padding);
+      border-radius: var(--card-border-radius);
+      box-shadow: var(--box-shadow);
+      transition: all 0.3s ease;
+      &:hover {
+        box-shadow: none;
+      }
+      .update {
+        display: grid;
+        grid-template-columns: 2.6rem auto;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  .sales-analytics {
+    margin-top: 2rem;
+    h2 {
+      color: var(--color-dark);
+      margin-bottom: 0.8rem;
+      font-family: "Roboto", sans-serif;
+    }
+    h3,
+    h5,
+    small {
+      color: var(--color-dark);
+      font-family: "Roboto", sans-serif;
+    }
+    .item {
+      background: var(--color-white);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.7rem;
+      padding: 1.4rem var(--card-padding);
+      border-radius: var(--border-radius-3);
+      box-shadow: var(--box-shadow);
+      transition: all 0.3s ease;
+      &:hover {
+        box-shadow: none;
+      }
+      .right {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        margin: 0;
+        width: 100%;
+      }
+      .icon {
+        padding: 0.6rem;
+        color: var(--color-white);
+        border-radius: 50%;
+        background: var(--color-primary);
+        display: flex;
+      }
+    }
+    .item.offline {
+      .icon {
+        background: var(--color-danger);
+      }
+    }
+    .item.customers {
+      .icon {
+        background: var(--color-success);
+      }
+    }
+    .add-product {
+      color: var(--color-primary);
+      background-color: transparent;
+      border: 2px dashed var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      h3 {
+        color: var(--color-dark);
+
+      }
+      div {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        h3 {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+
+//reponsive
+
+@media screen and (max-width: 1366px) {
+  .dashboard {
+    grid-template-columns: auto auto;
+  }
+}

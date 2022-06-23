@@ -9,6 +9,7 @@ const stateDefaut = {
   userInfo: {},
   mangND: [],
   thongTinTK: {},
+  thongTinND:{}
 }
 
 export const QuanLyNguoiDungReducer = (state = stateDefaut, action) => {
@@ -33,7 +34,9 @@ export const QuanLyNguoiDungReducer = (state = stateDefaut, action) => {
     case 'LAY_THONGTIN_TK':
       state.thongTinTK = action.thongTinTK
       return { ...state }
-
+      case 'LAY_THONGTIN_ND':
+        state.thongTinND = action.thongTinND
+        return { ...state }
     default:
       return state
   }

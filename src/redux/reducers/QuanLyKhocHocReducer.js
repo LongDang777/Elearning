@@ -24,6 +24,9 @@ export const QuanLyKhoaHocReducer = (state = stateDefaut, action) => {
     case 'DANGKY_KHOAHOC':
       state.thongtinDK = action.thongtinDK
       return { ...state };
+
+
+      
     case 'THEM_GIO_HANG':
       let index = state.gioHang.findIndex(item => {
         return item.maKhoaHoc === action.data.maKhoaHoc;

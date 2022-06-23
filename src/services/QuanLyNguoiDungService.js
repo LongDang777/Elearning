@@ -12,11 +12,23 @@ class QuanLyNguoiDungService {
   layThongTinTaiKhoan = () => {
     return http.post(`/api/QuanLyNguoiDung/ThongTinTaiKhoan`)
   }
+  layThongTinNguoiDung = (taiKhoan) => {
+    return http.post(`/api/QuanLyNguoiDung/ThongTinNguoiDung?taiKhoan=${taiKhoan}`)
+  }
   dangNhap = (userLogin) => {
     return http.post(`/api/QuanLyNguoiDung/DangNhap`, userLogin)
   }
   dangKy = (userInfo) => {
     return http.post(`/api/QuanLyNguoiDung/DangKy`, userInfo)
+  }
+  xoaND = (taiKhoan) => {
+    return http.delete(`/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${taiKhoan}`) 
+   };
+   themNguoiDung = (formData) => {
+    return http.post(`/api/QuanLyNguoiDung/ThemNguoiDung`, formData)
+  }
+  capNhatThongTinNguoiDung = (formData) => {
+    return http.put(`/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung`, formData)
   }
 }
 

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700|Grenze:300,400,700&display=swap&subset=vietnamese");
+
 @mixin text($color, $fs, $fw) {
 	color: $color;
 	font-size: $fs;

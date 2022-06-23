@@ -1,0 +1,134 @@
+.customer {
+  font-family: "Roboto", sans-serif;
+  h2 {
+    color: var(--color-dark);
+    font-family: "Roboto", sans-serif;
+  }
+  button.btn-primary {
+    color: #fff;
+    border-color: #1890ff;
+    background: #1890ff;
+    &:hover {
+      color: #fff;
+      border-color: #40a9ff;
+      background: #40a9ff;
+    }
+  }
+  .ant-input-search .ant-input {
+    color: var(--color-dark);
+    background-color: var(--color-white);
+    border-radius: 5px;
+    border: 1px solid transparent;
+    box-shadow: var(--box-shadow);
+    &:focus {
+      border: 1px solid var(--main-color);
+      box-shadow: none;
+      border-right-width: none;
+    }
+  }
+  .ant-table-column-title {
+    color: var(--color-dark);
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .ant-table-thead > tr > th {
+    color: var(--color-dark);
+    background: var(--color-background-thead);
+    border-bottom: 0;
+    &:hover {
+      background: var(--color-hover);
+    }
+  }
+  .ant-table-tbody > tr.ant-table-row:hover > td {
+    background: none;
+  }
+
+  .ant-table-tbody {
+    background: var(--color-white);
+    color: var(--color-dark);
+    tbody > tr:hover {
+      background: var(--color-hover);
+    }
+    tr {
+      td {
+        border-bottom: 0;
+        .anticon {
+          color: var(--color-primary);
+        }
+      }
+      td.ant-table-column-sort {
+        background: var(--color-white);
+        color: var(--color-dark);
+      }
+    }
+  }
+  .ant-table-wrapper {
+    table {
+      tbody {
+        tr {
+          td:nth-child(6) {
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1200px) {
+  .customer {
+    margin-top: 3rem;
+  }
+}
+@media screen and (max-width: 1080px) {
+  .customer {
+    margin-top: 6rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .customer {
+    .ant-table-wrapper {
+      table {
+        thead {
+          tr {
+            th:nth-child(4) {
+              display: none;
+            }
+          }
+        }
+        tbody {
+          tr {
+            td:nth-child(4) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .customer {
+    .ant-table-wrapper {
+      table {
+        thead {
+          tr {
+            th:nth-child(5) {
+              display: none;
+            }
+          }
+        }
+        tbody {
+          tr {
+            td:nth-child(5) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
