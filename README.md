@@ -1,3 +1,10 @@
+Phân chia tast:
+
+Kỳ: ,Header, giỏ hàng, profile
+Dũng: trang Home, chi tiết khoá học, đăn kí khoá học
+Long: component /allcourse, phần Admin
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
